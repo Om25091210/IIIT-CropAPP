@@ -1,6 +1,8 @@
 import 'package:crop_disease_detection/screens/slide_screen.dart';
+import 'package:crop_disease_detection/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LangScreen extends StatefulWidget {
   const LangScreen({Key? key}) : super(key: key);
@@ -10,8 +12,19 @@ class LangScreen extends StatefulWidget {
 }
 
 class _LangScreenState extends State<LangScreen> {
-  bool _isEnglishSelected = false;
-  bool _isHindiSelected = false;
+  Future<void> _checkFirstSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool _seen = (prefs.getBool('seen') ?? false);
+
+    if (_seen) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const WelcomeScreen()));
+    } else {
+      await prefs.setBool('seen', true);
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => SlideScreenPage()));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +79,7 @@ class _LangScreenState extends State<LangScreen> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SlideScreenPage()));
+                          _checkFirstSeen();
                         });
                       },
                       child: Container(

@@ -1,10 +1,10 @@
 // import 'package:crop_disease_detection/controller/authentication_repository.dart';
 // import 'package:crop_disease_detection/firebase_options.dart';
-import 'package:crop_disease_detection/screens/HomePages/home_screen.dart';
-import 'package:crop_disease_detection/screens/lang_screen.dart';
-import 'package:crop_disease_detection/screens/slide_screen.dart';
+// import 'package:crop_disease_detection/screens/HomePages/home_screen.dart';
+// import 'package:crop_disease_detection/screens/lang_screen.dart';
+// import 'package:crop_disease_detection/screens/slide_screen.dart';
 import 'package:crop_disease_detection/screens/splash_screen.dart';
-import 'package:crop_disease_detection/utils/routes.dart';
+// import 'package:crop_disease_detection/utils/routes.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,13 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: MyRoutes.splashRoute,
-      routes: {
-        MyRoutes.splashRoute: (context) => SplashScreen(),
-        MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.langRoute: (context) => LangScreen(),
-        MyRoutes.slideRoute: (context) => SlideScreenPage()
-      },
+      home: const SplashScreen(),
     );
   }
 }

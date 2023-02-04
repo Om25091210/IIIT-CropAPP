@@ -6,7 +6,6 @@ import 'package:crop_disease_detection/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../widgets/slide_page_widget.dart';
 
@@ -21,28 +20,6 @@ class _SlideScreenPageState extends State<SlideScreenPage> {
   final controller = LiquidController();
 
   int currentPage = 0;
-  int? isViewed;
-
-  @override
-  void initState() {
-    super.initState();
-    _checkPageHasBeenShown();
-  }
-
-  _checkPageHasBeenShown() async {
-    final prefs = await SharedPreferences.getInstance();
-    final hasBeenShown = prefs.getBool('has_been_shown') ?? false;
-    if (!hasBeenShown) {
-      isViewed = prefs.getInt('slide');
-    } else {
-      isViewed = 1;
-    }
-  }
-
-  _setPageHasBeenShown() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('has_been_shown', true);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +67,6 @@ class _SlideScreenPageState extends State<SlideScreenPage> {
               right: 18,
               child: ElevatedButton(
                   onPressed: () {
-                    _setPageHasBeenShown();
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
@@ -115,7 +91,7 @@ class _SlideScreenPageState extends State<SlideScreenPage> {
           )
         ],
       ),
-    ) ;
+    );
   }
 
   OnPageChangeCallback(int activePageIndex) {
