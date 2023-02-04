@@ -1,9 +1,13 @@
+import 'dart:convert';
 import 'package:crop_disease_detection/controller/global_controller.dart';
 import 'package:crop_disease_detection/screens/Paddy%20Crop/paddy_crop_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../widgets/weather_tab_home.dart';
+import 'dart:io';
 
 class FirstHomePage extends StatefulWidget {
   const FirstHomePage({Key? key}) : super(key: key);
@@ -47,6 +51,25 @@ class _FirstHomePageState extends State<FirstHomePage> {
     ),
   ];
 
+  File? _selectedimage;
+  String base64Image = "";
+  final imagePicker = ImagePicker();
+
+  Future<void> chooseImage(type) async {
+    var image;
+    if (type == "camera") {
+      image = await ImagePicker().pickImage(source: ImageSource.camera);
+    } else {
+      image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    }
+    if (image != null) {
+      setState(() {
+        _selectedimage = File(image.path);
+        base64Image = base64Encode(_selectedimage!.readAsBytesSync());
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,16 +97,13 @@ class _FirstHomePageState extends State<FirstHomePage> {
                     padding: const EdgeInsets.only(top: 10),
                     height: 150,
                     decoration: const BoxDecoration(
-                      gradient: 
-                        LinearGradient(
-                          colors: [
+                        gradient: LinearGradient(
+                            colors: [
                           Color.fromARGB(255, 205, 252, 206),
                           Colors.white
-                          ], 
-                          begin: Alignment.topCenter, 
-                          end: Alignment.bottomCenter
-                        ) 
-                    ),
+                        ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter)),
                     child: ListView.separated(
                         padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                         scrollDirection: Axis.horizontal,
@@ -100,11 +120,12 @@ class _FirstHomePageState extends State<FirstHomePage> {
                                       onTap: () {
                                         cardIndex.value = index;
                                         setState(() {
-                                          if(cardIndex.value == 0) {
+                                          if (cardIndex.value == 0) {
                                             Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) => const PaddyCropInfo()));
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const PaddyCropInfo()));
                                           }
                                         });
                                       },
@@ -115,7 +136,8 @@ class _FirstHomePageState extends State<FirstHomePage> {
                                             shape: BoxShape.circle,
                                             border: Border.all(
                                                 color: cardIndex.value == index
-                                                    ? const Color.fromARGB(255, 16, 160, 0)
+                                                    ? const Color.fromARGB(
+                                                        255, 16, 160, 0)
                                                     : Colors.black,
                                                 width: cardIndex.value == index
                                                     ? 4
@@ -169,13 +191,12 @@ class _FirstHomePageState extends State<FirstHomePage> {
                     width: 380,
                     decoration: BoxDecoration(
                         gradient: const LinearGradient(
-                          colors: [
-                            Color.fromARGB(255, 243, 243, 243),
-                            Color.fromARGB(255, 207, 220, 226)
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter
-                        ),
+                            colors: [
+                              Color.fromARGB(255, 243, 243, 243),
+                              Color.fromARGB(255, 207, 220, 226)
+                            ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter),
                         borderRadius: BorderRadius.circular(30)),
                     child: Column(
                       children: [
@@ -188,7 +209,22 @@ class _FirstHomePageState extends State<FirstHomePage> {
                         ),
                         const SizedBox(height: 10),
                         ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              PermissionStatus cameraStatus =
+                                  await Permission.camera.request();
+                              if (cameraStatus == PermissionStatus.granted) {
+                                chooseImage("camera");
+                              } else if (cameraStatus ==
+                                  PermissionStatus.denied) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content:
+                                            Text("The Permission is denied.")));
+                              } else if (cameraStatus ==
+                                  PermissionStatus.permanentlyDenied) {
+                                openAppSettings();
+                              }
+                            },
                             style: ElevatedButton.styleFrom(
                                 primary: const Color.fromARGB(255, 16, 160, 0),
                                 shape: RoundedRectangleBorder(
@@ -199,14 +235,32 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               children: [
                                 Text("Take a Picture",
                                     style: GoogleFonts.raleway(
-                                        fontWeight: FontWeight.bold, fontSize: 16)),
-                                const SizedBox(width: 10,),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16)),
+                                const SizedBox(
+                                  width: 10,
+                                ),
                                 const Icon(Icons.photo_camera_outlined)
                               ],
                             )),
                         const SizedBox(height: 10),
                         ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              PermissionStatus storageStatus =
+                                  await Permission.storage.request();
+                              if (storageStatus == PermissionStatus.granted) {
+                                chooseImage("Gallery");
+                              } else if (storageStatus ==
+                                  PermissionStatus.denied) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content:
+                                            Text("The Permission is denied.")));
+                              } else if (storageStatus ==
+                                  PermissionStatus.permanentlyDenied) {
+                                openAppSettings();
+                              }
+                            },
                             style: ElevatedButton.styleFrom(
                                 primary: const Color.fromARGB(255, 16, 160, 0),
                                 shape: RoundedRectangleBorder(
@@ -217,8 +271,11 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               children: [
                                 Text("Choose from Gallery",
                                     style: GoogleFonts.raleway(
-                                        fontWeight: FontWeight.bold, fontSize: 16)),
-                                const SizedBox(width: 10,),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16)),
+                                const SizedBox(
+                                  width: 10,
+                                ),
                                 const Icon(Icons.storage_outlined)
                               ],
                             ))
