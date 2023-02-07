@@ -2,6 +2,7 @@ import 'package:crop_disease_detection/screens/HomePages/home_screen.dart';
 import 'package:crop_disease_detection/screens/login_screen.dart';
 import 'package:crop_disease_detection/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -38,31 +39,31 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       OutlinedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const LoginScreen()));
                         },
                         style: OutlinedButton.styleFrom(
                           primary: const Color.fromARGB(255, 16, 160, 0),
-                          fixedSize: const Size(100, 50),
+                          fixedSize: const Size(120, 50),
                           side: const BorderSide(color: Color.fromARGB(255, 16, 160, 0), width: 2)
                         ),  
-                        child: Text("Login", style: GoogleFonts.raleway(fontSize: 18, fontWeight: FontWeight.bold))
+                        child: Text('login'.tr, style: GoogleFonts.raleway(fontSize: 18, fontWeight: FontWeight.bold))
                       ),
                       const SizedBox(width: 30),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const SignUpScreen()));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: const Color.fromARGB(255, 16, 160, 0),
-                          fixedSize: const Size(100, 50)
+                          fixedSize: const Size(120, 50)
                         ), 
-                        child: Text("SignUp", style: GoogleFonts.raleway(fontSize: 18, fontWeight: FontWeight.bold))
+                        child: Text('signup'.tr, style: GoogleFonts.raleway(fontSize: 18, fontWeight: FontWeight.bold))
                       ),
                     ],
                   ),
@@ -77,7 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => const HomePage()));
                     },
-                    child: Text("Skip", style: GoogleFonts.raleway(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
+                    child: Text('skip'.tr, style: GoogleFonts.raleway(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
                   )
                 )
               ],

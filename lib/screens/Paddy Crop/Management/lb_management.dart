@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LBManagement extends StatelessWidget {
@@ -14,7 +15,7 @@ class LBManagement extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Management",
+              'management'.tr,
               style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold, fontSize: 25),
             ),
@@ -31,47 +32,47 @@ class LBManagement extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "Preventive Methods-",
+                      'preventive'.tr,
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Avoid dry nurseries.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('lb_preventive1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Avoid late planting.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('lb_preventive2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Burning of straw and stubbles after harvest.',
+                    'lb_preventive3'.tr
                   ),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                      'Avoid grasses and other weeds on bunds and inside.'),
+                      'lb_preventive4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Dry seed treatment with Pseudomonas fluorescens talc formulation @ 10/kg of seed.',
+                    'lb_preventive5'.tr,
                   ),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Stagnate water to a depth of 2.5cm over an area of 25m2 in the nursery. Sprinkle 2.5 kg of P. fluorescens (talc) and mix with stagnated water. Soak the root system of seedlings for 30 min and transplant.',
+                    'lb_preventive6'.tr,
                   ),
                 ),
                 const SizedBox(height: 50),
@@ -81,41 +82,41 @@ class LBManagement extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "Cultural Methods-",
+                      'cultural'.tr,
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                      'Planting resistant varieties against the rice blast is the most practical and economical way of controlling rice blast.'),
+                      'lb_cultural1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                      'Use of Tolerant varieties (CO 47, CO 50, ADT 36, ADT 37,ASD 16,ASD 20,ADT 39,ASD 19,TPS 3,White ponni,ADT 44,BPT 5204,CORH , Palghuna, Swarnamukhi, Swathi, Prabhat, IR - 64, , IR - 36, Jaya)'),
+                      'lb_cultural2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Avoid excess N - fertilizer application.',
+                    'lb_cultural3'.tr,
                   ),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Apply nitrogen in three split doses.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('lb_cultural4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Remove weed hosts from bunds.',
+                    'lb_cultural5'.tr,
                   ),
                 ),
                 const SizedBox(height: 50),
@@ -125,40 +126,40 @@ class LBManagement extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "Chemical Methods-",
+                      'chemical'.tr,
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Do not apply lower/higher doses of fungicides.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('lb_chemical1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Spray before 11.00 AM/after 3.00 PM.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('lb_chemical2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Seed treatment at 2.0 g/kg seed with Captan or Carbendazim or Thiram or Tricyclazole.',
+                    'lb_chemical3'.tr
                   ),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                      'Spraying of Tricyclazole at 1g/lit of water or Edifenphos at 1 ml/lit of water or Carbendazim at 1.0 gm/lit.'),
+                      'lb_chemical4'.tr)
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
                   title: Text(
-                    'Pre-Tillering to Mid-Tillering: Light at 2 to 5 % disease severities - Apply Edifenphos or Carbendazim @ 1.0 gm/lit. Delay top dressing of N fertilizers when infection is seen.',
+                    'lb_chemical5'.tr
                   ),
                 ),
                 const SizedBox(

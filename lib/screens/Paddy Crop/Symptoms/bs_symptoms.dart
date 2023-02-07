@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BSSymptoms extends StatelessWidget {
@@ -14,42 +15,42 @@ class BSSymptoms extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Symptoms",
+              'symptoms'.tr,
               style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
           ),
           body: Column(
-            children: const [
-              SizedBox(height: 30),
+            children: [
+              const SizedBox(height: 30),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('The disease appears first as minute brown dots, later becoming cylindrical or oval to circular. (resemble sesame seed)'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms1'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Spots measure 0.5 to 2.0mm in breadth - coalesce to form large patches.'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms2'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Then several spots coalesce and the leaf dries up.',),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms3'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Infection also occurs on the panicle, neck with the brown color appearance'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms4'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Dark brown or black spots also appear on glumes.',),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms5'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('The seedlings die and affected nurseries can be often recognized from a distance by their brownish scorched appearance.',),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('bs_symptoms6'.tr),
               )
             ],
           ),

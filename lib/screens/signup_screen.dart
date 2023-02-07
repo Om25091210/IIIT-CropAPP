@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/signup_form_widget.dart';
 
@@ -14,7 +15,7 @@ class SignUpScreen extends StatelessWidget {
         child: Scaffold(
           body: SingleChildScrollView(
             child: Container(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -25,7 +26,7 @@ class SignUpScreen extends StatelessWidget {
               )),
               Center(
                 child: Text(
-                  "Get On Board!",
+                  'get_on_board'.tr,
                   style: GoogleFonts.raleway( 
                       fontSize: 30, fontWeight: FontWeight.bold),
                 ),
@@ -33,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: 5,),
               Center(
                 child: Text(
-                  "Create your profile to start your Journey.",
+                  'signup_desc'.tr,
                   style: GoogleFonts.raleway( 
                       fontSize: 15),
                 ),
@@ -41,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
               const SignUpForm(),
               Column(
                 children: [
-                  const Text("OR"),
+                  Text('or'.tr.toUpperCase()),
                   const SizedBox(height: 20,),
                   SizedBox(
                     width: double.infinity,
@@ -52,7 +53,7 @@ class SignUpScreen extends StatelessWidget {
                           side: const BorderSide(color: Color.fromARGB(255, 16, 160, 0), width: 2)
                       ), 
                       onPressed: () {}, 
-                      label: const Text("Sign-In with Google", style: TextStyle(color: Colors.black),)
+                      label: Text('signin_with_google'.tr, style: const TextStyle(color: Colors.black),)
                     ),
                   ),
                   const SizedBox(height: 20,),
@@ -60,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Already have an Account?",
+                        'already_have_account'.tr,
                         style: GoogleFonts.raleway(
                           color: Colors.black,
                           fontSize: 15,
@@ -71,7 +72,7 @@ class SignUpScreen extends StatelessWidget {
                         onPressed: () {}, 
                         child: Text.rich(
                           TextSpan(
-                            text: " LOGIN",
+                            text: " " + 'login'.tr.toUpperCase(),
                             style: GoogleFonts.raleway(
                               color: const Color.fromARGB(255, 16, 160, 0),
                               fontSize: 15,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OTPScreenMail extends StatelessWidget {
@@ -21,19 +22,18 @@ class OTPScreenMail extends StatelessWidget {
                   height: 80,
                 ),
                 Text(
-                  "CO\nDE",
+                  'code'.tr,
                   style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.bold, fontSize: 80),
                 ),
-                Text("Verification".toUpperCase(),
+                Text('verification'.tr.toUpperCase(),
                     style: GoogleFonts.raleway(
                         fontWeight: FontWeight.bold, fontSize: 18)),
                 const SizedBox(
                   height: 60,
                 ),
                 Text(
-                  "Enter the verification code sent at \n"
-                  "support@crophealthcheck.com",
+                  'otp_desc_email'.tr,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.raleway(fontSize: 16),
                 ),
@@ -63,7 +63,7 @@ class OTPScreenMail extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15)),
                     ),
                     child: Text(
-                      "Next",
+                      'next'.tr.toUpperCase(),
                       style: GoogleFonts.raleway(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

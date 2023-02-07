@@ -1,9 +1,8 @@
-const String slidePageTitle1 = "Health Check";
-const String slidePageTitle2 = "Community";
-const String slidePageTitle3 = "Cultivation Tips";
-const String slidePageDescription1 =
-    "Take a picture of your crop to detect diseases and receive treatment advice.";
-const String slidePageDescription2 =
-    "Ask a question about your crop to receive help from the community.";
-const String slidePageDescription3 =
-    "Receive farming advice about how to improve your yield.";
+import 'package:get/get.dart';
+
+String slidePageTitle1 = 'slidePageTitle1'.tr;
+String slidePageTitle2 = 'slidePageTitle2'.tr;
+String slidePageTitle3 = 'slidePageTitle3'.tr;
+String slidePageDescription1 = 'slidePageDesc1'.tr;
+String slidePageDescription2 = 'slidePageDesc2'.tr;
+String slidePageDescription3 = 'slidePageDesc3'.tr;

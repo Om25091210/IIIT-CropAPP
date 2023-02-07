@@ -4,6 +4,7 @@ import 'package:crop_disease_detection/screens/Paddy%20Crop/Diseases/fs_page_inf
 import 'package:crop_disease_detection/screens/Paddy%20Crop/Diseases/lb_page_info.dart';
 import 'package:crop_disease_detection/screens/Paddy%20Crop/Diseases/sb_page_info.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PaddyCropInfo extends StatefulWidget {
@@ -35,9 +36,9 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                     child: Column(
                       children: [
                         const SizedBox(height: 20),
-                        Text("Diseases", style: GoogleFonts.raleway(fontSize: 30, fontWeight: FontWeight.w600),),
+                        Text('diseases'.tr, style: GoogleFonts.raleway(fontSize: 30, fontWeight: FontWeight.w600),),
                         const SizedBox(height: 5,),
-                        Text("Tap for more info", style: GoogleFonts.raleway(fontSize: 15),),
+                        Text('tap'.tr, style: GoogleFonts.raleway(fontSize: 15),),
                         const SizedBox(height: 20,),
                       ],
                     ),
@@ -66,10 +67,10 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/blb.jpg"),
-                          const SizedBox(width: 20,),
+                          'blb'.tr == "जीवाणु पत्ती अंगमारी" ? const SizedBox(width: 30) : const SizedBox(width: 20,),
                           Expanded(
                             child: Text(
-                              "Bacterial Leaf Blight", 
+                              'blb'.tr, 
                               style: GoogleFonts.raleway(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
@@ -103,10 +104,10 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/lb.JPG"),
-                          const SizedBox(width: 60,),
+                          'lb'.tr == "धान का झोंका" ? const SizedBox(width: 55) : const SizedBox(width: 60,),
                           Expanded(
                             child: Text(
-                              "Leaf Blast", 
+                              'lb'.tr, 
                               style: GoogleFonts.raleway(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
@@ -140,10 +141,10 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/bs.jpg"),
-                          const SizedBox(width: 50,),
+                          'bs'.tr == "पत्र लांछन" ? const SizedBox(width: 70) : const SizedBox(width: 50,),
                           Expanded(
                             child: Text(
-                              "Brown Spot", 
+                              'bs'.tr, 
                               style: GoogleFonts.raleway(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
@@ -177,10 +178,10 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/fs.jpg"),
-                          const SizedBox(width: 50,),
+                          'fs'.tr == "आभासी कांगियारी" ? const SizedBox(width: 37) : const SizedBox(width: 50,),
                           Expanded(
                             child: Text(
-                              "False Smut", 
+                              'fs'.tr, 
                               style: GoogleFonts.raleway(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600
@@ -214,10 +215,10 @@ class _PaddyCropInfoState extends State<PaddyCropInfo> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/sb.JPG"),
-                          const SizedBox(width: 50,),
+                          'sb'.tr == "पर्णच्छंद अंगमारी" ? const SizedBox(width: 45) : const SizedBox(width: 50,),
                           Expanded(
                             child: Text(
-                              "Sheath Blight", 
+                              'sb'.tr, 
                               style: GoogleFonts.raleway(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600

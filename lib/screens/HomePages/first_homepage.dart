@@ -35,19 +35,19 @@ class _FirstHomePageState extends State<FirstHomePage> {
   List<CropImage> items = [
     CropImage(
       image: 'assets/images/paddy.png',
-      title: 'Paddy',
+      title: 'paddy'.tr,
     ),
     CropImage(
       image: 'assets/images/wheat.png',
-      title: 'Wheat',
+      title: 'wheat'.tr,
     ),
     CropImage(
       image: 'assets/images/maize.png',
-      title: 'Maize',
+      title: 'maize'.tr,
     ),
     CropImage(
       image: 'assets/images/jowar.png',
-      title: 'Jowar',
+      title: 'jowar'.tr,
     ),
   ];
 
@@ -79,7 +79,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         title: Text(
-          "Crop Health Check",
+          'crop_health_check'.tr,
           style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
         ),
         centerTitle: true,
@@ -178,7 +178,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                       children: [
                         const SizedBox(width: 10),
                         Text(
-                          "Crop Disease Diagnosis",
+                          'crop_disease_diagnosis'.tr,
                           style: GoogleFonts.raleway(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
@@ -217,9 +217,9 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               } else if (cameraStatus ==
                                   PermissionStatus.denied) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
+                                    SnackBar(
                                         content:
-                                            Text("The Permission is denied.")));
+                                            Text('permission_denied'.tr)));
                               } else if (cameraStatus ==
                                   PermissionStatus.permanentlyDenied) {
                                 openAppSettings();
@@ -233,7 +233,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Take a Picture",
+                                Text('take_picture'.tr,
                                     style: GoogleFonts.raleway(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16)),
@@ -253,9 +253,9 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               } else if (storageStatus ==
                                   PermissionStatus.denied) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
+                                    SnackBar(
                                         content:
-                                            Text("The Permission is denied.")));
+                                            Text('permission_denied'.tr)));
                               } else if (storageStatus ==
                                   PermissionStatus.permanentlyDenied) {
                                 openAppSettings();
@@ -269,7 +269,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Choose from Gallery",
+                                Text('gallery'.tr,
                                     style: GoogleFonts.raleway(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16)),
@@ -291,7 +291,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                       children: [
                         const SizedBox(width: 10),
                         Text(
-                          "Weather",
+                          'weather'.tr,
                           style: GoogleFonts.raleway(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),

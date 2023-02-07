@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BLBSymptoms extends StatelessWidget {
@@ -14,37 +15,37 @@ class BLBSymptoms extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Symptoms",
+              'symptoms'.tr,
               style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
           ),
           body: Column(
-            children: const [
-              SizedBox(height: 30),
+            children: [
+              const SizedBox(height: 30),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Observed 1-3 Weeks after transplanting'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('blb_symptoms1'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Green water – Soaked layer along the cut portion or leaf tip of leaves as early symptoms'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('blb_symptoms2'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Leaves wilt and roll up and become grayish-green to yellow',),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('blb_symptoms3'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Entire plant wilt completely'),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('blb_symptoms4'.tr),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ListTile(
-                leading: Icon(Icons.fiber_manual_record),
-                title: Text('Water-soaked to yellowish strips on leaf blades or starting at leaf tips with a wavy margin',),
+                leading: const Icon(Icons.fiber_manual_record),
+                title: Text('blb_symptoms5'.tr),
               )
             ],
           ),

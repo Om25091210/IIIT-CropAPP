@@ -25,7 +25,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Profile",
+              'profile'.tr,
               style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold, fontSize: 25),
             ),
@@ -73,7 +73,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                     height: 20,
                   ),
                   Text(
-                    "Prashant Bhattacharya",
+                    'name'.tr,
                     style: GoogleFonts.raleway(
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
@@ -81,14 +81,14 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                     height: 5,
                   ),
                   Text(
-                    "iprashantbhattacharya@gmail.com",
+                    'name_email'.tr,
                     style: GoogleFonts.raleway(fontSize: 18),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
-                    width: 200,
+                    width: 240,
                     height: 40,
                     child: ElevatedButton(
                       onPressed: () => Get.to(() => const EditProfileScreen()),
@@ -98,7 +98,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                             borderRadius: BorderRadius.circular(15)),
                       ),
                       child: Text(
-                        "Edit Profile",
+                        'edit_profile'.tr,
                         style: GoogleFonts.raleway(
                             fontSize: 20, fontWeight: FontWeight.w600),
                       ),
@@ -114,23 +114,23 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                     height: 20,
                   ),
                   ProfileMenuWidget(
-                    title: "Settings",
+                    title: 'settings'.tr,
                     icon: Icons.settings,
                     onPress: () {},
                   ),
                   ProfileMenuWidget(
-                    title: "User Management",
+                    title: 'user_management'.tr,
                     icon: Icons.manage_accounts,
                     onPress: () {},
                   ),
                   const Divider(),
                   ProfileMenuWidget(
-                    title: "Information",
+                    title: 'information'.tr,
                     icon: Icons.info_outline,
                     onPress: () {},
                   ),
                   ProfileMenuWidget(
-                    title: "Logout",
+                    title: 'logout'.tr,
                     icon: Icons.logout_outlined,
                     onPress: () {
                       // AuthenticationRepository.instance.logout();

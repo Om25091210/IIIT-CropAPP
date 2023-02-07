@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FSManagement extends StatelessWidget {
@@ -14,7 +15,7 @@ class FSManagement extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Management",
+              'management'.tr,
               style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
@@ -28,105 +29,105 @@ class FSManagement extends StatelessWidget {
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Preventive Methods-",
+                      'preventive'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Use of disease-free seeds that are selected from the healthy crop.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_preventive1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Seed treatment with carbendazim 2.0g/kg of seeds.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_preventive2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Control insect pests.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_preventive3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Split application of nitrogen is recommended.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_preventive4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Removal and proper disposal of infected plant debris.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_preventive5'.tr),
                 ),
                 const SizedBox(height: 50),
                 Row(
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Cultural Methods-",
+                      'cultural'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Among the cultural control, the destruction of straw and stubble from infected plants is recommended to reduce the disease.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_cultural1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Use varieties that are found to be resistant or tolerant against the disease in India.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_cultural2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Avoid field activities when the plants are wet.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_cultural3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Early planted crop has fewer smut balls than the late-planted crop.'),
+                ListTile(
+                  leading:  const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_cultural4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('At the time of harvesting, diseased plants should be removed and destroyed so that sclerotia do not fall in the field. This will reduce the primary inoculum for the next crop.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_cultural5'.tr),
                 ),
                 const SizedBox(height: 50),
                 Row(
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Chemical Methods-",
+                      'chemical'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Spraying of copper oxychloride at 2.5 g/litre or Propiconazole at 1.0 ml/liter at boot leaf and milky stages will be more useful to prevent fungal infection.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_chemical1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Seed treatment with carbendazim 2.0g/kg of seeds.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_chemical2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('At tillering and prepare-flowering ages, spray Hexaconazole @ 1ml/lit or Chlorothalonil 2g/lit.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_chemical3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('In areas where the disease may cause yield loss, applying captan, captafol, fentin hydroxide, and mancozeb can be inhibited conidial germination.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_chemical4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('At tillering and pre-flowering stages, spraying of carbendazim fungicide and copper base fungicide can effectively control the disease.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('fs_chemical5'.tr),
                 ),
                 const SizedBox(height: 20,)
               ],

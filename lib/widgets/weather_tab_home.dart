@@ -113,9 +113,9 @@ class _WeatherTabState extends State<WeatherTab> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                        "Sunset: ",
-                        style: TextStyle(
+                    Text(
+                        'sunset'.tr,
+                        style: const TextStyle(
                           fontSize: 13,
                           fontStyle: FontStyle.italic
                         ),

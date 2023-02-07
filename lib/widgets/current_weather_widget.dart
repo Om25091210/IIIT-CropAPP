@@ -1,6 +1,7 @@
 import 'package:crop_disease_detection/model/weather_data_current.dart';
 import 'package:crop_disease_detection/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class CurrentWeatherWidget extends StatelessWidget {
@@ -167,12 +168,12 @@ class CurrentWeatherWidget extends StatelessWidget {
                     const SizedBox(width: 10),
                     Row(mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           height: 20,
                           width: 65,
                           child: Text(
-                            "Sunrise: ",
-                            style: TextStyle(fontSize: 16),
+                            'sunrise'.tr,
+                            style: const TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -204,12 +205,12 @@ class CurrentWeatherWidget extends StatelessWidget {
                     const SizedBox(width: 10),
                     Row(mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           height: 20,
                           width: 65,
                           child: Text(
-                            "Sunset: ",
-                            style: TextStyle(fontSize: 16),
+                            'sunset'.tr,
+                            style: const TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
                         ),

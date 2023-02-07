@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SecondHomePage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         title: Text(
-          "News",
+          'news'.tr,
           style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
         ),
         centerTitle: true,

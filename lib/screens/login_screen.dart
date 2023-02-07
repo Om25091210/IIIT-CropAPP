@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/login_form_widget.dart';
 
@@ -25,7 +26,7 @@ class LoginScreen extends StatelessWidget {
               )),
               Center(
                 child: Text(
-                  "Welcome Back",
+                  'welcome_back'.tr,
                   style: GoogleFonts.raleway( 
                       fontSize: 30, fontWeight: FontWeight.bold),
                 ),
@@ -33,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               const LoginForm(),
               Column(
                 children: [
-                  const Text("OR"),
+                  Text('or'.tr.toUpperCase()),
                   const SizedBox(height: 20,),
                   SizedBox(
                     width: double.infinity,
@@ -44,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                           side: const BorderSide(color: Color.fromARGB(255, 16, 160, 0), width: 2)
                       ), 
                       onPressed: () {}, 
-                      label: const Text("Sign-In with Google", style: TextStyle(color: Colors.black),)
+                      label: Text('signin_with_google'.tr, style: TextStyle(color: Colors.black),)
                     ),
                   ),
                   const SizedBox(height: 20,),
@@ -52,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Don't have an Account?",
+                        'dont_have_account'.tr,
                         style: GoogleFonts.raleway(
                           color: Colors.black,
                           fontSize: 15,
@@ -63,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {}, 
                         child: Text.rich(
                           TextSpan(
-                            text: " SIGNUP",
+                            text: " " + 'signup'.tr.toUpperCase(),
                             style: GoogleFonts.raleway(
                               color: const Color.fromARGB(255, 16, 160, 0),
                               fontSize: 15,

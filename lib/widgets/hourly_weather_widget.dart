@@ -19,9 +19,9 @@ class HourlyWeatherWidget extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
           alignment: Alignment.topCenter,
-          child: const Text(
-            "Today",
-            style: TextStyle(fontSize: 18),
+          child: Text(
+            'today'.tr,
+            style: const TextStyle(fontSize: 18),
           ),
         ),
         Container(

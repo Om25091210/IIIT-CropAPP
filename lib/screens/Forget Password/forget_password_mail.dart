@@ -1,5 +1,6 @@
 import 'package:crop_disease_detection/screens/Forget%20Password/otp_screen_mail.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ForgetPassowordMailScreen extends StatelessWidget {
@@ -26,13 +27,13 @@ class ForgetPassowordMailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10,),
                   Text(
-                    "Forget Password",
+                    'forget_password'.tr,
                     style: GoogleFonts.raleway( 
                         fontSize: 35, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 5,),
                   Text(
-                    "Please enter your registered E-Mail to receive OTP.",
+                    'forget_password_email'.tr,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.raleway( 
                         fontSize: 16),
@@ -42,16 +43,16 @@ class ForgetPassowordMailScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text("E-Mail", style: TextStyle(color: Colors.black),),
-                            hintText: "E-Mail",
-                            focusedBorder: OutlineInputBorder(
+                          decoration: InputDecoration(
+                            label: Text('email'.tr, style: const TextStyle(color: Colors.black),),
+                            hintText: 'email'.tr,
+                            focusedBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Color.fromARGB(255, 16, 160, 0))
                             ),
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                               borderSide: BorderSide(color: Color.fromARGB(255, 16, 160, 0))
                             ),
-                            prefixIcon: Icon(Icons.mail_outline_rounded, color: Colors.black,)
+                            prefixIcon: const Icon(Icons.mail_outline_rounded, color: Colors.black,)
                           ),
                         ),
                         const SizedBox(height: 30,),
@@ -70,7 +71,7 @@ class ForgetPassowordMailScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15)),
                             ),
-                            child: Text("Next", style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold),),
+                            child: Text('next'.tr.toUpperCase(), style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold),),
                           ),
                         )
                       ],

@@ -1,6 +1,7 @@
 import 'package:crop_disease_detection/screens/Paddy%20Crop/Management/bs_management.dart';
 import 'package:crop_disease_detection/screens/Paddy%20Crop/Symptoms/bs_symptoms.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BSPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class BSPage extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Brown Spot",
+              'bs'.tr,
               style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
@@ -67,7 +68,7 @@ class BSPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Image.asset("assets/images/Symptoms.png"),
-                            Text("Symptoms", style: GoogleFonts.raleway(
+                            Text('symptoms'.tr, style: GoogleFonts.raleway(
                               fontSize: 20,
                               fontWeight: FontWeight.bold
                             ),)
@@ -101,7 +102,7 @@ class BSPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Image.asset("assets/images/Management.png"),
-                            Text("Management", style: GoogleFonts.raleway(
+                            Text('management'.tr, style: GoogleFonts.raleway(
                               fontSize: 20,
                               fontWeight: FontWeight.bold
                             ),)

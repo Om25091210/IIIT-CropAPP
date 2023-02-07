@@ -1,5 +1,6 @@
 import 'package:crop_disease_detection/widgets/forget_password_btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../screens/Forget Password/forget_password_mail.dart';
@@ -19,22 +20,22 @@ class LoginForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextFormField(
-            decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
-                labelText: "E-Mail",
-                hintText: "E-Mail",
-                border: OutlineInputBorder()),
+            decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.person_outline_outlined),
+                labelText: 'email'.tr,
+                hintText: 'email'.tr,
+                border: const OutlineInputBorder()),
           ),
           const SizedBox(
             height: 10,
           ),
           TextFormField(
-            decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.fingerprint),
-                labelText: "Password",
-                hintText: "Password",
-                border: OutlineInputBorder(),
-                suffixIcon: IconButton(
+            decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.fingerprint),
+                labelText: 'pass'.tr,
+                hintText: 'pass'.tr,
+                border: const OutlineInputBorder(),
+                suffixIcon: const IconButton(
                   icon: Icon(Icons.remove_red_eye_sharp),
                   onPressed: null,
                 )),
@@ -56,7 +57,7 @@ class LoginForm extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const SizedBox(height: 10,),
-                              Text("Make Selection!",
+                              Text('make_selection'.tr,
                                   style: GoogleFonts.raleway(
                                       fontSize: 25,
                                       fontWeight: FontWeight.bold)),
@@ -64,7 +65,7 @@ class LoginForm extends StatelessWidget {
                                 height: 5,
                               ),
                               Text(
-                                "Select on of the options given below to reset your password.",
+                                'option_selection'.tr,
                                 style: GoogleFonts.raleway(fontSize: 15),
                               ),
                               const SizedBox(
@@ -77,8 +78,8 @@ class LoginForm extends StatelessWidget {
                                     MaterialPageRoute(
                                         builder: (context) => const ForgetPassowordMailScreen()));
                                 },
-                                title: "E-Mail",
-                                subTitle: "Reset via Mail Verification",
+                                title: 'email'.tr,
+                                subTitle: 'reset_email'.tr,
                                 btnIcon: Icons.mail_outline_rounded,
                               ),
                               const SizedBox(
@@ -91,8 +92,8 @@ class LoginForm extends StatelessWidget {
                                     MaterialPageRoute(
                                         builder: (context) => const ForgetPassowordPhoneScreen()));
                                 },
-                                title: "Phone No",
-                                subTitle: "Reset via Phone Verification",
+                                title: 'phone'.tr,
+                                subTitle: 'reset_phone'.tr,
                                 btnIcon: Icons.mobile_friendly_rounded,
                               ),
                             ],
@@ -102,7 +103,7 @@ class LoginForm extends StatelessWidget {
               style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all(
                       const Color.fromARGB(255, 16, 160, 0))),
-              child: Text("Forget Password?", style: GoogleFonts.raleway(fontWeight: FontWeight.bold)),
+              child: Text('forget_password'.tr, style: GoogleFonts.raleway(fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(
@@ -116,7 +117,7 @@ class LoginForm extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15)),
               ),
               child: Text(
-                "LOGIN",
+                'login'.tr.toUpperCase(),
                 style: GoogleFonts.raleway(
                     fontSize: 18, fontWeight: FontWeight.bold),
               ),

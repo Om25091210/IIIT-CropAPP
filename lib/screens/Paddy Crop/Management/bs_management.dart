@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BSManagement extends StatelessWidget {
@@ -14,7 +15,7 @@ class BSManagement extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Management",
+              'management'.tr,
               style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
@@ -28,105 +29,105 @@ class BSManagement extends StatelessWidget {
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Preventive Methods-",
+                      'preventive'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Seed treatment with Pseudomonas fluorescens @ 10g/kg of seed followed by seedling dip @ of 2.5 kg or products/ha dissolved in 100 liters and dipping for 30 minutes.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_preventive1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('seed soak/seed treatment with Captan or Thiram at 2.0g /kg of seed'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_preventive2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Seed treatment with Agrosan or Ceresan 2.5 g/kg seed to ward off seedling blight stage;',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_preventive3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Since the fungus is seed transmitted, a hot water seed treatment (53-54°C) for 10-12 minutes may be effective before sowing. This treatment controls primary infection at the seedling stage. Presoaking the seed in cold water for 8 hours increases effectivity of the treatment.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_preventive4'.tr),
                 ),
                 const SizedBox(height: 50),
                 Row(
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Cultural Methods-",
+                      'cultural'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('As the disease is seed-borne, Use disease-free seeds.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Removal of alternate & collateral hosts.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Growing resistant varieties like ADT44, PY4, CORH1, CO44, CAUVERY, BHAVANI, TPS4, and Dhanu',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Providing proper nutrition for optimum plant growth and prevention of water stress seem to be the most important factors in controlling brown spots.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('The disease is rarely observed in normally fertile rice soils.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural5'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Soils known to be low in plant-available silicon should be amended with calcium silicate slag before planting and the field should be well irrigated to avoid water stress.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_cultural6'.tr),
                 ),
                 const SizedBox(height: 50),
                 Row(
                   children: [
                     const SizedBox(width: 10,),
                     Text(
-                      "Chemical Methods-",
+                      'chemical'.tr,
                       style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 20),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('seed soak/seed treatment with Captan or Thiram at 2.0g /kg of seed.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_chemical1'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Spray Mancozeb (2.0g/lit) or Edifenphos (1ml/lit) - 2 to 3 times at 10 - 15 day intervals.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_chemical2'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Spray preferably during the early hours or afternoon at flowering and post-flowering stages.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_chemical3'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Seed treatment with Agrosan or Ceresan 2.5 g/kg seed to ward off seedling blight stage; Spraying copper fungicides to control secondary spread.'),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_chemical4'.tr),
                 ),
                 const SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.fiber_manual_record),
-                  title: Text('Grisepfulvin, nystatin, aureofungin, and similar antibiotics have been found effective in preventing primary seedling infection.',),
+                ListTile(
+                  leading: const Icon(Icons.fiber_manual_record),
+                  title: Text('bs_chemical5'.tr),
                 ),
                 const SizedBox(height: 20,)
               ],

@@ -1,5 +1,6 @@
 import 'package:crop_disease_detection/screens/Forget%20Password/otp_screen_phone.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ForgetPassowordPhoneScreen extends StatelessWidget {
@@ -26,13 +27,13 @@ class ForgetPassowordPhoneScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10,),
                   Text(
-                    "Forget Password",
+                    'forget_password'.tr,
                     style: GoogleFonts.raleway( 
                         fontSize: 35, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 5,),
                   Text(
-                    "Please enter your registered Phone Number to receive OTP.",
+                    'forget_password_phone'.tr,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.raleway( 
                         fontSize: 16),
@@ -42,16 +43,16 @@ class ForgetPassowordPhoneScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text("Phone Number", style: TextStyle(color: Colors.black),),
-                            hintText: "Phone No",
-                            focusedBorder: OutlineInputBorder(
+                          decoration: InputDecoration(
+                            label: Text('phone'.tr, style: const TextStyle(color: Colors.black),),
+                            hintText: 'phone'.tr,
+                            focusedBorder: const OutlineInputBorder(
                               borderSide: BorderSide(color: Color.fromARGB(255, 16, 160, 0))
                             ),
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                               borderSide: BorderSide(color: Color.fromARGB(255, 16, 160, 0))
                             ),
-                            prefixIcon: Icon(Icons.numbers_outlined, color: Colors.black,)
+                            prefixIcon: const Icon(Icons.numbers_outlined, color: Colors.black,)
                           ),
                         ),
                         const SizedBox(height: 30,),
@@ -70,7 +71,7 @@ class ForgetPassowordPhoneScreen extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15)),
                             ),
-                            child: Text("Next", style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold),),
+                            child: Text('next'.tr, style: GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold),),
                           ),
                         )
                       ],

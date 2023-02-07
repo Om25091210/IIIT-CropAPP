@@ -1,6 +1,7 @@
 // import 'package:crop_disease_detection/controller/profile_controller.dart';
 // import 'package:crop_disease_detection/model/user_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,7 +19,7 @@ class EditProfileScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
             title: Text(
-              "Edit Profile",
+              'edit_profile'.tr,
               style: GoogleFonts.raleway(
                   fontWeight: FontWeight.bold, fontSize: 25),
             ),
@@ -84,8 +85,8 @@ class EditProfileScreen extends StatelessWidget {
                                   decoration: InputDecoration(
                                     prefixIcon: const Icon(
                                         Icons.person_outline_outlined),
-                                    labelText: "Full Name",
-                                    hintText: "Full Name",
+                                    labelText: 'full_name'.tr,
+                                    hintText: 'full_name'.tr,
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(100)),
@@ -99,8 +100,8 @@ class EditProfileScreen extends StatelessWidget {
                                   decoration: InputDecoration(
                                       prefixIcon:
                                           const Icon(Icons.email_outlined),
-                                      labelText: "E-Mail",
-                                      hintText: "E-Mail",
+                                      labelText: 'email'.tr,
+                                      hintText: 'email'.tr,
                                       border: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(100))),
@@ -112,8 +113,8 @@ class EditProfileScreen extends StatelessWidget {
                                   // initialValue: userData.phoneNo,
                                   decoration: InputDecoration(
                                       prefixIcon: const Icon(Icons.call),
-                                      labelText: "Phone Number",
-                                      hintText: "Phone No",
+                                      labelText: 'phone'.tr,
+                                      hintText: 'phone'.tr,
                                       border: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(100))),
@@ -125,8 +126,8 @@ class EditProfileScreen extends StatelessWidget {
                                   // initialValue: userData.password,
                                   decoration: InputDecoration(
                                       prefixIcon: const Icon(Icons.fingerprint),
-                                      labelText: "Password",
-                                      hintText: "Password",
+                                      labelText: 'pass'.tr,
+                                      hintText: 'pass'.tr,
                                       border: OutlineInputBorder(
                                           borderRadius:
                                               BorderRadius.circular(100)),
@@ -152,7 +153,7 @@ class EditProfileScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(100)),
                               ),
                               child: Text(
-                                "Edit Profile",
+                                'edit_profile'.tr,
                                 style: GoogleFonts.raleway(
                                     fontSize: 20, fontWeight: FontWeight.w600),
                               ),

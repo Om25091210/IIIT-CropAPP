@@ -1,6 +1,7 @@
 import 'package:crop_disease_detection/model/weather_data_current.dart';
 import 'package:crop_disease_detection/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class ComfortLevel extends StatelessWidget {
@@ -13,7 +14,7 @@ class ComfortLevel extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(top: 1, bottom: 20, right: 20, left: 20),
-          child: const Text("Comfort Level", style: TextStyle(fontSize: 18),),
+          child: Text('comfort_level'.tr, style: const TextStyle(fontSize: 18),),
         ),
         SizedBox(
           height: 180,
@@ -31,7 +32,7 @@ class ComfortLevel extends StatelessWidget {
                       progressBarWidth: 12
                     ),
                     infoProperties: InfoProperties(
-                      bottomLabelText: "Humidity",
+                      bottomLabelText: 'humidity'.tr,
                       bottomLabelStyle: const TextStyle(
                         fontSize: 14,
                         letterSpacing: 0.1,
@@ -57,9 +58,9 @@ class ComfortLevel extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(
-                          text: "Feels Like: ",
-                          style: TextStyle(
+                        TextSpan(
+                          text: 'feels_like'.tr,
+                          style: const TextStyle(
                             fontSize: 14,
                             height: 0.8,
                             color: CustomColors.textColorBlack,
@@ -87,9 +88,9 @@ class ComfortLevel extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       children: [
-                        const TextSpan(
-                          text: "UV Index: ",
-                          style: TextStyle(
+                        TextSpan(
+                          text: 'uv'.tr,
+                          style: const TextStyle(
                             fontSize: 14,
                             height: 0.8,
                             color: CustomColors.textColorBlack,

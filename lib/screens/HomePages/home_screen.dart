@@ -3,6 +3,7 @@ import 'package:crop_disease_detection/screens/HomePages/third_homepage.dart';
 import 'package:crop_disease_detection/screens/HomePages/second_homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   List pages = [
     const FirstHomePage(),
     const SecondHomePage(),
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                           ? const Color.fromARGB(255, 16, 160, 0)
                           : Colors.black,
                     ),
-                    label: "Your Crops"),
+                    label: 'your_crops'.tr),
                 BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       "assets/icons/news.svg",
@@ -60,12 +60,16 @@ class _HomePageState extends State<HomePage> {
                           ? const Color.fromARGB(255, 16, 160, 0)
                           : Colors.black,
                     ),
-                    label: "News"),
+                    label: 'news'.tr),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person_outline_rounded, size: 30, color: selectedTab == 2
+                    icon: Icon(
+                      Icons.person_outline_rounded,
+                      size: 30,
+                      color: selectedTab == 2
                           ? const Color.fromARGB(255, 16, 160, 0)
-                          : Colors.black,),
-                    label: "You"),
+                          : Colors.black,
+                    ),
+                    label: 'you'.tr),
               ])),
     );
   }

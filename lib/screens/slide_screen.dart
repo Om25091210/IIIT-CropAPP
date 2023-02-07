@@ -4,6 +4,7 @@ import 'package:crop_disease_detection/model/slide_model/text_strings.dart';
 import 'package:crop_disease_detection/screens/welcome_screen.dart';
 import 'package:crop_disease_detection/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -77,7 +78,7 @@ class _SlideScreenPageState extends State<SlideScreenPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                       fixedSize: const Size(150, 50)),
-                  child: Text("Get Started",
+                  child: Text('get_started'.tr,
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.bold, fontSize: 16)))),
           Positioned(

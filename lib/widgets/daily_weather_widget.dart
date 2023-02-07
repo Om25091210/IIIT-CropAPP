@@ -1,6 +1,7 @@
 import 'package:crop_disease_detection/model/weather_data_daily.dart';
 import 'package:crop_disease_detection/utils/custom_colors.dart';
 import "package:flutter/material.dart";
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class DailyWeatherWidget extends StatelessWidget {
@@ -28,10 +29,10 @@ class DailyWeatherWidget extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             margin: const EdgeInsets.only(bottom: 10),
-            child: const Text(
-              "Upcoming Days",
+            child: Text(
+              'upcoming_days'.tr,
               style:
-                  TextStyle(color: CustomColors.textColorBlack, fontSize: 17),
+                  const TextStyle(color: CustomColors.textColorBlack, fontSize: 17),
             ),
           ),
           SizedBox(

@@ -1,6 +1,7 @@
 // import 'package:crop_disease_detection/controller/otp_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OTPScreenPhone extends StatelessWidget {
@@ -23,21 +24,20 @@ class OTPScreenPhone extends StatelessWidget {
                   height: 80,
                 ),
                 Text(
-                  "CO\nDE",
+                  'code'.tr,
                   style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.bold, fontSize: 80),
                 ),
-                Text("Verification".toUpperCase(),
+                Text('verification'.tr.toUpperCase(),
                     style: GoogleFonts.raleway(
                         fontWeight: FontWeight.bold, fontSize: 18)),
                 const SizedBox(
                   height: 60,
                 ),
-                const Text(
-                  "Enter the verification code sent at \n"
-                  "58**87**78",
+                Text(
+                  'otp_desc_phone'.tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                   ),
                 ),
@@ -70,7 +70,7 @@ class OTPScreenPhone extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15)),
                     ),
                     child: Text(
-                      "Next",
+                      'next'.tr.toUpperCase(),
                       style: GoogleFonts.raleway(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),
