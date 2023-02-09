@@ -3,6 +3,7 @@ import 'package:crop_disease_detection/screens/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 import '../../widgets/profile_menu_widget.dart';
 
 class ThirdHomePage extends StatefulWidget {
@@ -19,7 +20,6 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
-          drawer: const Drawer(),
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           appBar: AppBar(
             backgroundColor: Colors.white,
@@ -30,6 +30,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                   fontWeight: FontWeight.bold, fontSize: 25),
             ),
             centerTitle: true,
+            automaticallyImplyLeading: false
           ),
           body: SingleChildScrollView(
             child: Container(
@@ -116,7 +117,9 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                   ProfileMenuWidget(
                     title: 'settings'.tr,
                     icon: Icons.settings,
-                    onPress: () {},
+                    onPress: () {
+                      openAppSettings();
+                    },
                   ),
                   ProfileMenuWidget(
                     title: 'user_management'.tr,

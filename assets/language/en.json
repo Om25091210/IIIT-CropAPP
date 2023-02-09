@@ -175,5 +175,10 @@
     "sb_chemical4": "Spray Carbendazim 250 g or Chlorothalonil 1 kg or Edifenphos 1 lit/ha",
     "preventive": "Preventive Methods:-",
     "cultural": "Cultural Methods:-",
-    "chemical": "Chemical Methods:-"
+    "chemical": "Chemical Methods:-",
+    "about_app": "About App",
+    "mail_us": "Mail us",
+    "help": "Help",
+    "mail_error": "Can't able to open Mail.",
+    "app_desc": "Crop Health Check is a mobile app that allows users to upload images of crop leaves to diagnose plant diseases. The app supports four crops: paddy, wheat, maize, and jowar. It has a weather tab that displays the current weather of the user's location, a user profile section, and multilanguage support for English and Hindi. Users can also view symptoms and management methods for various diseases of the paddy crop."
 }

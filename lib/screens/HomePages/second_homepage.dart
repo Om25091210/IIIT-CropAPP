@@ -14,7 +14,6 @@ class _SecondHomePageState extends State<SecondHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -24,6 +23,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
           style: GoogleFonts.raleway(fontWeight: FontWeight.bold, fontSize: 25),
         ),
         centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
     );
   }

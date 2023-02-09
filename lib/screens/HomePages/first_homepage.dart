@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../../widgets/drawer_widget.dart';
 import '../../widgets/weather_tab_home.dart';
 import 'dart:io';
 
@@ -73,7 +74,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const DrawerWidget(),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -224,6 +225,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                                   PermissionStatus.permanentlyDenied) {
                                 openAppSettings();
                               }
+                                                          
                             },
                             style: ElevatedButton.styleFrom(
                                 primary: const Color.fromARGB(255, 16, 160, 0),
@@ -249,13 +251,12 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               PermissionStatus storageStatus =
                                   await Permission.storage.request();
                               if (storageStatus == PermissionStatus.granted) {
-                                chooseImage("Gallery");
+                              chooseImage("Gallery");
                               } else if (storageStatus ==
                                   PermissionStatus.denied) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
-                                        content:
-                                            Text('permission_denied'.tr)));
+                                        content: Text('permission_denied'.tr)));
                               } else if (storageStatus ==
                                   PermissionStatus.permanentlyDenied) {
                                 openAppSettings();
