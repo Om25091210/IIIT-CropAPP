@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:crop_disease_detection/controller/global_controller.dart';
 import 'package:crop_disease_detection/screens/Paddy%20Crop/paddy_crop_info.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../../widgets/drawer_widget.dart';
 import '../../widgets/weather_tab_home.dart';
+import 'package:http/http.dart' as http;
 import 'dart:io';
+
+import '../disease_detection_page.dart';
 
 class FirstHomePage extends StatefulWidget {
   const FirstHomePage({Key? key}) : super(key: key);
@@ -52,22 +56,64 @@ class _FirstHomePageState extends State<FirstHomePage> {
     ),
   ];
 
-  File? _selectedimage;
-  String base64Image = "";
+  File? image;
   final imagePicker = ImagePicker();
+  late Uint8List responseData;
+  late Map<String, dynamic> responseJson;
 
-  Future<void> chooseImage(type) async {
-    var image;
+  Future chooseImage(type) async {
+    final selectedImage;
     if (type == "camera") {
-      image = await ImagePicker().pickImage(source: ImageSource.camera);
+      selectedImage = await imagePicker.pickImage(source: ImageSource.camera);
     } else {
-      image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      selectedImage = await imagePicker.pickImage(source: ImageSource.gallery);
     }
-    if (image != null) {
+
+    if (selectedImage != null) {
       setState(() {
-        _selectedimage = File(image.path);
-        base64Image = base64Encode(_selectedimage!.readAsBytesSync());
+        image = File(selectedImage.path);
       });
+
+      var result = await uploadImage('image', image!);
+      var responseJson = json.decode(result);
+      if (responseJson.containsKey("Class") &&
+          responseJson.containsKey("Confidence score") &&
+          responseJson.containsKey("Symptom Recording Link")) {
+        String classValue = responseJson['Class'];
+        String confidenceScore = responseJson['Confidence score'];
+        String symptomRecordingLink = responseJson['Symptom Recording Link'];
+
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DiseaseDetectionPage(
+                  image: image,
+                  classValue: classValue,
+                  confidenceScore: confidenceScore,
+                  symptomRecordingLink: symptomRecordingLink,
+                )));
+      } else {
+        throw Exception("Response from server does not contain expected keys.");
+      }
+    } else {
+      throw Exception("No image selected");
+    }
+  }
+
+  Future uploadImage(String title, File file) async {
+    var uri = Uri.parse('http://14.139.54.222:5000/image');
+    var request = http.MultipartRequest('POST', uri);
+    request.fields['title'] = "dummyImage";
+    request.headers['Content-Type'] = "multipart/form-data";
+    var picture = await http.MultipartFile.fromPath('file', image!.path);
+    request.files.add(picture);
+
+    var response = await request.send();
+    if (response.statusCode == 200) {
+      responseData = await response.stream.toBytes();
+      var result = String.fromCharCodes(responseData);
+      return result;
+    } else {
+      throw Exception(
+          "Failed to upload image. HTTP status code: ${response.statusCode}");
     }
   }
 
@@ -214,18 +260,19 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               PermissionStatus cameraStatus =
                                   await Permission.camera.request();
                               if (cameraStatus == PermissionStatus.granted) {
-                                chooseImage("camera");
+                                setState(() {
+                                  var result = chooseImage("camera");
+                                  print(result);
+                                });
                               } else if (cameraStatus ==
                                   PermissionStatus.denied) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
-                                        content:
-                                            Text('permission_denied'.tr)));
+                                        content: Text('permission_denied'.tr)));
                               } else if (cameraStatus ==
                                   PermissionStatus.permanentlyDenied) {
                                 openAppSettings();
                               }
-                                                          
                             },
                             style: ElevatedButton.styleFrom(
                                 primary: const Color.fromARGB(255, 16, 160, 0),
@@ -251,7 +298,10 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               PermissionStatus storageStatus =
                                   await Permission.storage.request();
                               if (storageStatus == PermissionStatus.granted) {
-                              chooseImage("Gallery");
+                                setState(() {
+                                  var result = chooseImage("Gallery");
+                                  print(result);
+                                });
                               } else if (storageStatus ==
                                   PermissionStatus.denied) {
                                 ScaffoldMessenger.of(context).showSnackBar(
