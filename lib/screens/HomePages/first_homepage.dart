@@ -10,7 +10,6 @@ import '../../widgets/drawer_widget.dart';
 import '../../widgets/weather_tab_home.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
-
 import '../disease_detection_page.dart';
 
 class FirstHomePage extends StatefulWidget {
@@ -122,31 +121,6 @@ class _FirstHomePageState extends State<FirstHomePage> {
                 child: Column(
                 children: [
                   Container(
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                        Color.fromARGB(255, 205, 252, 206),
-                        Color.fromARGB(255, 205, 252, 206)
-                      ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter)),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            const SizedBox(width: 10),
-                            Text(
-                              'tap'.tr,
-                              style: GoogleFonts.raleway(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
                     padding: const EdgeInsets.only(top: 10),
                     height: 150,
                     decoration: const BoxDecoration(
@@ -189,8 +163,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                                             shape: BoxShape.circle,
                                             border: Border.all(
                                                 color: cardIndex.value == index
-                                                    ? const Color.fromARGB(
-                                                        255, 16, 160, 0)
+                                                    ? Colors.blue
                                                     : Colors.black,
                                                 width: cardIndex.value == index
                                                     ? 4
@@ -240,7 +213,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                   ),
                   const SizedBox(height: 10),
                   Container(
-                    height: 260,
+                    height: 295,
                     width: 380,
                     decoration: BoxDecoration(
                         gradient: const LinearGradient(
@@ -257,7 +230,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                           padding: const EdgeInsets.only(top: 5),
                           child: Image.asset(
                             "assets/images/capture_image.png",
-                            height: 130,
+                            height: 160,
                           ),
                         ),
                         const SizedBox(height: 10),
