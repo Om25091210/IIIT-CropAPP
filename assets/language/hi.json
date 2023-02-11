@@ -54,7 +54,6 @@
     "edit_profile": "प्रोफ़ाइल संपादित करें",
     "settings": "समायोजन",
     "user_management": "प्रयोक्ता प्रबंधन",
-    "information": "जानकारी",
     "logout": "लॉग आउट",
     "today": "आज",
     "upcoming_days": "आने वाले दिन",
@@ -191,5 +190,6 @@
     "uploaded_image": "अपलोड की गई छवि",
     "disease_image": "रोग की छवि",
     "tap_to_play": "ऑडियो चलाएं",
-    "tap_to_stop": "ऑडियो बंद करे "
+    "tap_to_stop": "ऑडियो बंद करे ",
+    "close": "बंद करें"
 }

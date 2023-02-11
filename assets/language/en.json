@@ -54,7 +54,6 @@
     "edit_profile": "Edit Profile",
     "settings": "Settings",
     "user_management": "User Management",
-    "information": "Information",
     "logout": "Logout",
     "today": "Today",
     "upcoming_days": "Upcoming Days",
@@ -191,5 +190,6 @@
     "uploaded_image": "Uploaded Image",
     "disease_image": "Disease Image",
     "tap_to_play": "Tap to Play",
-    "tap_to_stop": "Tap to Stop"
+    "tap_to_stop": "Tap to Stop",
+    "close": "Close"
 }

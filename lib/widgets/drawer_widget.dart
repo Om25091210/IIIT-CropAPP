@@ -59,7 +59,47 @@ class DrawerWidget extends StatelessWidget {
             DrawerElement(
               icon: CupertinoIcons.info,
               name: 'about_app'.tr,
-              onPress: () {},
+              onPress: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Center(
+                        child: Text(
+                          'about_app'.tr,
+                          style: GoogleFonts.raleway(
+                            fontWeight: FontWeight.bold, fontSize: 25
+                          ),
+                        )
+                      ),
+                      content: Text(
+                        'app_desc'.tr,
+                        style: GoogleFonts.raleway(
+                            fontWeight: FontWeight.w500, fontSize: 16
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      actions: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: const Color.fromARGB(255, 16, 160, 0),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)),
+                            fixedSize: const Size(100, 30)),
+                          child: Text(
+                            'close'.tr, 
+                            style: GoogleFonts.raleway(
+                              fontSize: 15, fontWeight: FontWeight.w600
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  });
+              },
               endIcon: true,
             ),
             DrawerElement(

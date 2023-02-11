@@ -22,16 +22,15 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
         child: Scaffold(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           appBar: AppBar(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            title: Text(
-              'profile'.tr,
-              style: GoogleFonts.raleway(
-                  fontWeight: FontWeight.bold, fontSize: 25),
-            ),
-            centerTitle: true,
-            automaticallyImplyLeading: false
-          ),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              title: Text(
+                'profile'.tr,
+                style: GoogleFonts.raleway(
+                    fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+              centerTitle: true,
+              automaticallyImplyLeading: false),
           body: SingleChildScrollView(
             child: Container(
               padding: const EdgeInsets.all(30),
@@ -128,10 +127,49 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                   ),
                   const Divider(),
                   ProfileMenuWidget(
-                    title: 'information'.tr,
-                    icon: Icons.info_outline,
-                    onPress: () {},
-                  ),
+                      title: 'about_app'.tr,
+                      icon: Icons.info_outline,
+                      onPress: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Center(
+                                  child: Text(
+                                    'about_app'.tr,
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold, fontSize: 25
+                                    ),
+                                  )
+                                ),
+                                content: Text(
+                                  'app_desc'.tr,
+                                  style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.w500, fontSize: 16
+                                  ),
+                                  textAlign: TextAlign.justify,
+                                ),
+                                actions: [
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: const Color.fromARGB(255, 16, 160, 0),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50)),
+                                      fixedSize: const Size(100, 30)),
+                                    child: Text(
+                                      'close'.tr, 
+                                      style: GoogleFonts.raleway(
+                                        fontSize: 15, fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              );
+                            });
+                      }),
                   ProfileMenuWidget(
                     title: 'logout'.tr,
                     icon: Icons.logout_outlined,
