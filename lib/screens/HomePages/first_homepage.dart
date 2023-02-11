@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:typed_data';
 import 'package:crop_disease_detection/controller/global_controller.dart';
 import 'package:crop_disease_detection/screens/Paddy%20Crop/paddy_crop_info.dart';
@@ -59,40 +58,22 @@ class _FirstHomePageState extends State<FirstHomePage> {
   File? image;
   final imagePicker = ImagePicker();
   late Uint8List responseData;
-  late Map<String, dynamic> responseJson;
 
   Future chooseImage(type) async {
-    final selectedImage;
-    if (type == "camera") {
-      selectedImage = await imagePicker.pickImage(source: ImageSource.camera);
-    } else {
-      selectedImage = await imagePicker.pickImage(source: ImageSource.gallery);
-    }
+    final selectedImage = (type == "camera")
+        ? await imagePicker.pickImage(source: ImageSource.camera)
+        : await imagePicker.pickImage(source: ImageSource.gallery);
 
     if (selectedImage != null) {
       setState(() {
         image = File(selectedImage.path);
       });
 
-      var result = await uploadImage('image', image!);
-      var responseJson = json.decode(result);
-      if (responseJson.containsKey("Class") &&
-          responseJson.containsKey("Confidence score") &&
-          responseJson.containsKey("Symptom Recording Link")) {
-        String classValue = responseJson['Class'];
-        String confidenceScore = responseJson['Confidence score'];
-        String symptomRecordingLink = responseJson['Symptom Recording Link'];
-
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DiseaseDetectionPage(
-                  image: image,
-                  classValue: classValue,
-                  confidenceScore: confidenceScore,
-                  symptomRecordingLink: symptomRecordingLink,
-                )));
-      } else {
-        throw Exception("Response from server does not contain expected keys.");
-      }
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => DiseaseDetectionPage(
+                image: image,
+                futureResult: uploadImage('imahe', image!),
+              )));
     } else {
       throw Exception("No image selected");
     }
@@ -140,6 +121,31 @@ class _FirstHomePageState extends State<FirstHomePage> {
             : SingleChildScrollView(
                 child: Column(
                 children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [
+                        Color.fromARGB(255, 205, 252, 206),
+                        Color.fromARGB(255, 205, 252, 206)
+                      ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            const SizedBox(width: 10),
+                            Text(
+                              'tap'.tr,
+                              style: GoogleFonts.raleway(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                   Container(
                     padding: const EdgeInsets.only(top: 10),
                     height: 150,
@@ -234,7 +240,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                   ),
                   const SizedBox(height: 10),
                   Container(
-                    height: 290,
+                    height: 260,
                     width: 380,
                     decoration: BoxDecoration(
                         gradient: const LinearGradient(
@@ -251,7 +257,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                           padding: const EdgeInsets.only(top: 5),
                           child: Image.asset(
                             "assets/images/capture_image.png",
-                            height: 150,
+                            height: 130,
                           ),
                         ),
                         const SizedBox(height: 10),

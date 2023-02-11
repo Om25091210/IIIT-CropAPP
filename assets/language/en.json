@@ -180,5 +180,16 @@
     "mail_us": "Mail us",
     "help": "Help",
     "mail_error": "Can't able to open Mail.",
-    "app_desc": "Crop Health Check is a mobile app that allows users to upload images of crop leaves to diagnose plant diseases. The app supports four crops: paddy, wheat, maize, and jowar. It has a weather tab that displays the current weather of the user's location, a user profile section, and multilanguage support for English and Hindi. Users can also view symptoms and management methods for various diseases of the paddy crop."
+    "app_desc": "Crop Health Check is a mobile app that allows users to upload images of crop leaves to diagnose plant diseases. The app supports four crops: paddy, wheat, maize, and jowar. It has a weather tab that displays the current weather of the user's location, a user profile section, and multilanguage support for English and Hindi. Users can also view symptoms and management methods for various diseases of the paddy crop.",
+    "disease_diagnosis": "Disease Diagnosis",
+    "blb_diagnosis": "Disease: Bacterial Leaf Blight",
+    "lb_diagnosis": "Disease: Leaf Blast",
+    "bs_diagnosis": "Disease: Brown Spot",
+    "fs_diagnosis": "Disease: False Smut",
+    "sb_diagnosis": "Disease: Sheath Blight",
+    "confidence": "Confidence Score: ",
+    "uploaded_image": "Uploaded Image",
+    "disease_image": "Disease Image",
+    "tap_to_play": "Tap to Play",
+    "tap_to_stop": "Tap to Stop"
 }
