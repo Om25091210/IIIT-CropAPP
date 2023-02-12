@@ -191,5 +191,8 @@
     "disease_image": "Disease Image",
     "tap_to_play": "Tap to Play",
     "tap_to_stop": "Tap to Stop",
-    "close": "Close"
+    "close": "Close",
+    "exception1": "No image selected",
+    "exception2": "Failed to upload image. HTTP status code: ",
+    "exception3": "Response from server does not contain expected keys."
 }

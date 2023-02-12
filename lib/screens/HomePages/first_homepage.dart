@@ -74,7 +74,9 @@ class _FirstHomePageState extends State<FirstHomePage> {
                 futureResult: uploadImage('imahe', image!),
               )));
     } else {
-      throw Exception("No image selected");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text('exception1'.tr)));
     }
   }
 
@@ -92,8 +94,9 @@ class _FirstHomePageState extends State<FirstHomePage> {
       var result = String.fromCharCodes(responseData);
       return result;
     } else {
-      throw Exception(
-          "Failed to upload image. HTTP status code: ${response.statusCode}");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text("${'exception2'.tr} HTTP status code: ${response.statusCode}")));
     }
   }
 

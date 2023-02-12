@@ -46,7 +46,9 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
           symptomRecordingLink = responseJson['Symptom Recording Link'];
         });
       } else {
-        throw Exception("Response from server does not contain expected keys.");
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('exception3'.tr)));
       }
     });
 
