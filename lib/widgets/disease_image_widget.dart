@@ -17,6 +17,7 @@ class DiseaseImageWidget extends StatelessWidget {
           child: Image.asset(
             image,
             height: 190,
+            width: 190,
           ),
         ),
         const SizedBox(height: 5,),

@@ -195,8 +195,11 @@ class _FirstHomePageState extends State<FirstHomePage> {
                               )));
                         }),
                   ),
-                  const Divider(
-                    thickness: 2,
+                  const Padding(
+                    padding: EdgeInsets.only(left: 12.0, right: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
                   ),
                   Container(
                     color: Colors.white,
@@ -213,7 +216,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                   ),
                   const SizedBox(height: 10),
                   Container(
-                    height: 295,
+                    height: 285,
                     width: 380,
                     decoration: BoxDecoration(
                         gradient: const LinearGradient(
@@ -230,7 +233,7 @@ class _FirstHomePageState extends State<FirstHomePage> {
                           padding: const EdgeInsets.only(top: 5),
                           child: Image.asset(
                             "assets/images/capture_image.png",
-                            height: 160,
+                            height: 155,
                           ),
                         ),
                         const SizedBox(height: 10),
@@ -312,8 +315,11 @@ class _FirstHomePageState extends State<FirstHomePage> {
                       ],
                     ),
                   ),
-                  const Divider(
-                    thickness: 2,
+                  const Padding(
+                    padding: EdgeInsets.only(left: 12.0, right: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
                   ),
                   Container(
                     color: Colors.white,

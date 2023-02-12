@@ -106,7 +106,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
       filePath = "assets/audio/bs.MP3";
     } else if (classValue == "False Smut") {
       classValueText = 'fs_diagnosis'.tr;
-      filePath = "assets/audio/bs.MP3";
+      filePath = "assets/audio/fs.MP3";
     } else if (classValue == "Sheath Blight") {
       classValueText = 'sb_diagnosis'.tr;
       filePath = "assets/audio/sb.MP3";
@@ -157,6 +157,8 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                                     child: Image.file(
                                       widget.image!,
                                       height: 190,
+                                      width: 190,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const SizedBox(
