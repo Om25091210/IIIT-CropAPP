@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
    <application
-        android:label="crop_disease_detection"
+        android:label="Crop Health Check"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
