@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2000), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const LangScreen()));
     });
@@ -44,19 +44,20 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
                 Positioned(
-                  bottom: 100,
-                  left: 90,
-                  child: Image.asset(
-                    "assets/images/IIIT_logo.png",
-                    height: 100,
-                  ),
-                ),
-                Positioned(
                   bottom: 80,
-                  right: 70,
-                  child: Image.asset(
-                    "assets/images/meity.png",
-                    height: 150,
+                  left: 95,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/images/IIIT_logo.png",
+                        height: 80,
+                      ),
+                      Image.asset(
+                        "assets/images/meity.png",
+                        height: 170,
+                      ),
+                    ],
                   ),
                 ),
               ],

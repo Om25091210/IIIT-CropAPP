@@ -118,7 +118,7 @@ class DrawerWidget extends StatelessWidget {
               name: 'mail_us'.tr,
               onPress: () async {
                 const String url =
-                    'mailto:test@crophealthcheck.org?subject=Greetings';
+                    'mailto:srinu@iiitnr.edu.in?subject=Greetings';
                 Uri uri = Uri.parse(url);
                 if (await launchUrl(uri)) {
                 } else {
