@@ -1,10 +1,12 @@
-// import 'package:crop_disease_detection/controller/signup_controller.dart';
-// import 'package:crop_disease_detection/model/user_model.dart';
-// import 'package:crop_disease_detection/screens/Forget%20Password/otp_screen_phone.dart';
+import 'package:crop_disease_detection/controller/signup_controller.dart';
+import 'package:crop_disease_detection/model/user_model.dart';
+import 'package:crop_disease_detection/screens/Forget%20Password/otp_screen_phone.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:crop_disease_detection/controller/usermanagement.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({
@@ -13,7 +15,7 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final controller = Get.put(SignUpController());
+    final controller = Get.put(SignUpController());
     final _formKey = GlobalKey<FormState>();
     return Form(
         key: _formKey,
@@ -23,7 +25,7 @@ class SignUpForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextFormField(
-                // controller: controller.fullName,
+                controller: controller.fullName,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.person_outline_outlined),
                     labelText: 'full_name'.tr,
@@ -34,7 +36,7 @@ class SignUpForm extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                // controller: controller.email,
+                controller: controller.email,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.email_outlined),
                     labelText: 'email'.tr,
@@ -45,7 +47,7 @@ class SignUpForm extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                // controller: controller.phoneNo,
+                controller: controller.phoneNo,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.numbers_outlined),
                     labelText: 'phone'.tr,
@@ -56,7 +58,7 @@ class SignUpForm extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                // controller: controller.password,
+                controller: controller.password,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.fingerprint),
                     labelText: 'pass'.tr,
@@ -75,21 +77,17 @@ class SignUpForm extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    // if (_formKey.currentState!.validate()) {
-                    //   // SignUpController.instance.registerUser(
-                    //   //     controller.email.text.trim(),
-                    //   //     controller.password.text.trim());
-                    //   // SignUpController.instance
-                    //   //     .phoneAuthentication(controller.phoneNo.text.trim());
-                    //   // Get.to(() => const OTPScreenPhone());
-                    //   final user = UserModel(
-                    //       email: controller.email.text.trim(),
-                    //       password: controller.password.text.trim(),
-                    //       fullName: controller.fullName.text.trim(),
-                    //       phoneNo: controller.phoneNo.text.trim());
-                    //   SignUpController.instance
-                    //       .createUser(user);
-                    // }
+                    if (_formKey.currentState!.validate()) {
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                          email: controller.email.text.trim(),
+                          password: controller.password.text.trim())
+                          .then((signedInUser) {
+                        UserManagement().storeNewUser(controller.fullName.text.trim(),controller.phoneNo.text.trim(),controller.email.text.trim(),controller.password.text.trim(),context);
+                      }).catchError((e) {
+                        print(e);
+                      });
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromARGB(255, 16, 160, 0),

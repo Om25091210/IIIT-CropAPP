@@ -37,13 +37,9 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
     super.initState();
     widget.futureResult.then((result) {
       var responseJson = json.decode(result);
-      if (responseJson.containsKey("Class") &&
-          responseJson.containsKey("Confidence score") &&
-          responseJson.containsKey("Symptom Recording Link")) {
+      if (responseJson.containsKey("Class")) {
         setState(() {
           classValue = responseJson['Class'];
-          confidenceScore = responseJson['Confidence score'];
-          symptomRecordingLink = responseJson['Symptom Recording Link'];
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -97,7 +93,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     String classValueText = '';
-    if (classValue == "Bactrial Leaf Blight") {
+    if (classValue == "BLB") {
       classValueText = 'blb_diagnosis'.tr;
       filePath = "assets/audio/blb.MP3";
     } else if (classValue == "Leaf Blast") {
@@ -147,7 +143,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            if (classValue == "Bactrial Leaf Blight" ||
+                            if (classValue == "BLB" ||
                                 classValue == "Leaf Blast" ||
                                 classValue == "Brown Spot" ||
                                 classValue == "False Smut" ||
@@ -174,7 +170,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                                   ),
                                 ],
                               ),
-                            if (classValue == "Bactrial Leaf Blight")
+                            if (classValue == "BLB")
                               const DiseaseImageWidget(
                                 image: "assets/images/blb_main.jpg",
                               )
@@ -201,13 +197,6 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                           classValueText,
                           style: GoogleFonts.raleway(
                               fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          'confidence'.tr + confidenceScore!,
-                          style: const TextStyle(fontSize: 18),
                         ),
                         const SizedBox(
                           height: 10,
@@ -312,7 +301,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                           ],
                         ),
                         const SizedBox(height: 10),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_preventive1'.tr),
@@ -338,7 +327,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_preventive1'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_preventive2'.tr),
@@ -364,7 +353,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_preventive2'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_preventive3'.tr),
@@ -390,7 +379,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_preventive3'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_preventive4'.tr),
@@ -411,7 +400,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('fs_preventive4'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_preventive5'.tr),
@@ -446,7 +435,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                           ],
                         ),
                         const SizedBox(height: 10),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_cultural1'.tr),
@@ -472,7 +461,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_cultural1'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_cultural2'.tr),
@@ -498,7 +487,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_cultural2'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_cultural3'.tr),
@@ -524,7 +513,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_cultural3'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_cultural4'.tr),
@@ -550,7 +539,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_cultural4'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_cultural5'.tr),
@@ -595,7 +584,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                           ],
                         ),
                         const SizedBox(height: 10),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_chemical1'.tr),
@@ -621,7 +610,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_chemical1'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_chemical2'.tr),
@@ -647,7 +636,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_chemical2'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_chemical3'.tr),
@@ -673,7 +662,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_chemical3'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_chemical4'.tr),
@@ -699,7 +688,7 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
                             title: Text('sb_chemical4'.tr),
                           ),
                         const SizedBox(height: 5),
-                        if (classValue == "Bactrial Leaf Blight")
+                        if (classValue == "BLB")
                           ListTile(
                             leading: const Icon(Icons.fiber_manual_record),
                             title: Text('blb_chemical5'.tr),

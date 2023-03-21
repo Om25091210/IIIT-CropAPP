@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/signup_form_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -52,7 +56,9 @@ class SignUpScreen extends StatelessWidget {
                           fixedSize: const Size(100, 50),
                           side: const BorderSide(color: Color.fromARGB(255, 16, 160, 0), width: 2)
                       ), 
-                      onPressed: () {}, 
+                      onPressed: () {
+                        print('No user found for that email.');
+                      }, 
                       label: Text('signin_with_google'.tr, style: const TextStyle(color: Colors.black),)
                     ),
                   ),
@@ -69,7 +75,9 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {}, 
+                        onPressed: () {
+                          print('No user found for that phone.');
+                        }, 
                         child: Text.rich(
                           TextSpan(
                             text: " " + 'login'.tr.toUpperCase(),

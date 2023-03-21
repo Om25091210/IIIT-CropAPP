@@ -44,41 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBVs9RxJkC2E5PcOKbpPY3fW2RTS0oapv0',
-    appId: '1:816063479247:web:01fe635bd7bca945caa6ba',
-    messagingSenderId: '816063479247',
-    projectId: 'crop-health-check',
-    authDomain: 'crop-health-check.firebaseapp.com',
-    storageBucket: 'crop-health-check.appspot.com',
+    apiKey: 'AIzaSyC3ONu1LVSNAMKS7gLnNyAljRGnxY0FuEE',
+    appId: '1:405217690918:web:fa29471ff2ab2e67076de7',
+    messagingSenderId: '405217690918',
+    projectId: 'iiit-crophealthcheck',
+    authDomain: 'iiit-crophealthcheck.firebaseapp.com',
+    storageBucket: 'iiit-crophealthcheck.appspot.com',
+    measurementId: 'G-MB9N6HP0XT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBcoj_dnIAznKtCs7jHSTs3Q_i72DHYHn8',
-    appId: '1:816063479247:android:490ffb347d91476ccaa6ba',
-    messagingSenderId: '816063479247',
-    projectId: 'crop-health-check',
-    storageBucket: 'crop-health-check.appspot.com',
+    apiKey: 'AIzaSyBZ-dgBU54whmepZP1hhWT7_srOZoXI5uo',
+    appId: '1:405217690918:android:8478ca3411101fe8076de7',
+    messagingSenderId: '405217690918',
+    projectId: 'iiit-crophealthcheck',
+    storageBucket: 'iiit-crophealthcheck.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB-88hLOy9XbZrbvCwkmcNiZiUE64A_-50',
-    appId: '1:816063479247:ios:546f39d46e99f6dfcaa6ba',
-    messagingSenderId: '816063479247',
-    projectId: 'crop-health-check',
-    storageBucket: 'crop-health-check.appspot.com',
-    androidClientId: '816063479247-ec3aa4vc0ecqi2eqvg0ar1n03aus06b2.apps.googleusercontent.com',
-    iosClientId: '816063479247-ug893c7c9d3mlrv01gj2jfbtph7p9p2m.apps.googleusercontent.com',
+    apiKey: 'AIzaSyARgMeAzrZ_I9d3UbeWspjebfLRLol-K2I',
+    appId: '1:405217690918:ios:27d95e5e893cad02076de7',
+    messagingSenderId: '405217690918',
+    projectId: 'iiit-crophealthcheck',
+    storageBucket: 'iiit-crophealthcheck.appspot.com',
+    iosClientId: '405217690918-5ko4ofclif4p0oguj577ptshrb51vh9v.apps.googleusercontent.com',
     iosBundleId: 'com.example.cropDiseaseDetection',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB-88hLOy9XbZrbvCwkmcNiZiUE64A_-50',
-    appId: '1:816063479247:ios:546f39d46e99f6dfcaa6ba',
-    messagingSenderId: '816063479247',
-    projectId: 'crop-health-check',
-    storageBucket: 'crop-health-check.appspot.com',
-    androidClientId: '816063479247-ec3aa4vc0ecqi2eqvg0ar1n03aus06b2.apps.googleusercontent.com',
-    iosClientId: '816063479247-ug893c7c9d3mlrv01gj2jfbtph7p9p2m.apps.googleusercontent.com',
+    apiKey: 'AIzaSyARgMeAzrZ_I9d3UbeWspjebfLRLol-K2I',
+    appId: '1:405217690918:ios:27d95e5e893cad02076de7',
+    messagingSenderId: '405217690918',
+    projectId: 'iiit-crophealthcheck',
+    storageBucket: 'iiit-crophealthcheck.appspot.com',
+    iosClientId: '405217690918-5ko4ofclif4p0oguj577ptshrb51vh9v.apps.googleusercontent.com',
     iosBundleId: 'com.example.cropDiseaseDetection',
   );
 }

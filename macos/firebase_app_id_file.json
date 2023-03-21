@@ -1,7 +1,7 @@
 {
   "file_generated_by": "FlutterFire CLI",
   "purpose": "FirebaseAppID & ProjectID for this Firebase app in this directory",
-  "GOOGLE_APP_ID": "1:816063479247:ios:546f39d46e99f6dfcaa6ba",
-  "FIREBASE_PROJECT_ID": "crop-health-check",
-  "GCM_SENDER_ID": "816063479247"
+  "GOOGLE_APP_ID": "1:405217690918:ios:27d95e5e893cad02076de7",
+  "FIREBASE_PROJECT_ID": "iiit-crophealthcheck",
+  "GCM_SENDER_ID": "405217690918"
 }

@@ -1,5 +1,7 @@
-// import 'package:crop_disease_detection/controller/authentication_repository.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crop_disease_detection/controller/authentication_repository.dart';
 import 'package:crop_disease_detection/screens/edit_profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +16,37 @@ class ThirdHomePage extends StatefulWidget {
 }
 
 class _ThirdHomePageState extends State<ThirdHomePage> {
+  String name = '';
+  String email = '';
+  String password = '';
+
+  @override
+  void initState() {
+    super.initState();
+    getUserData();
+  }
+
+  Future<void> getUserData() async {
+    String? uid = FirebaseAuth.instance.currentUser?.uid;
+    final CollectionReference usersCollection = FirebaseFirestore.instance.collection('users');
+    final DocumentReference userDocument = usersCollection.doc(uid);
+    DocumentSnapshot userSnapshot = await userDocument.get();
+    if (userSnapshot.exists) {
+      Map<String, dynamic> userData = userSnapshot.data() as Map<String, dynamic>;
+      name = userData['name'];
+      email = userData['email'];
+      password = userData['password'];
+      print('Name: $name, Email: $email, Password: $password');
+      setState(() {
+        name = userData['name'];
+        email = userData['email'];
+      });
+    } else {
+      print('User data not found');
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -73,7 +106,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                     height: 20,
                   ),
                   Text(
-                    'name'.tr,
+                    name,
                     style: GoogleFonts.raleway(
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
@@ -81,7 +114,7 @@ class _ThirdHomePageState extends State<ThirdHomePage> {
                     height: 5,
                   ),
                   Text(
-                    'name_email'.tr,
+                    email,
                     style: GoogleFonts.raleway(fontSize: 18),
                   ),
                   const SizedBox(
