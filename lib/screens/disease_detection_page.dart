@@ -95,19 +95,19 @@ class _DiseaseDetectionPageState extends State<DiseaseDetectionPage>
     String classValueText = '';
     if (classValue == "BLB") {
       classValueText = 'blb_diagnosis'.tr;
-      filePath = "assets/audio/blb.MP3";
+      filePath = "assets/audio/blb.mp3";
     } else if (classValue == "Leaf Blast") {
       classValueText = 'lb_diagnosis'.tr;
-      filePath = "assets/audio/lb.MP3";
+      filePath = "assets/audio/lb.mp3";
     } else if (classValue == "Brown Spot") {
       classValueText = 'bs_diagnosis'.tr;
-      filePath = "assets/audio/bs.MP3";
+      filePath = "assets/audio/bs.mp3";
     } else if (classValue == "False Smut") {
       classValueText = 'fs_diagnosis'.tr;
-      filePath = "assets/audio/fs.MP3";
+      filePath = "assets/audio/fs.mp3";
     } else if (classValue == "Sheath Blight") {
       classValueText = 'sb_diagnosis'.tr;
-      filePath = "assets/audio/sb.MP3";
+      filePath = "assets/audio/sb.mp3";
     }
 
     return Scaffold(
